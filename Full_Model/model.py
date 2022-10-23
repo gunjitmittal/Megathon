@@ -10,9 +10,6 @@ train_x = numpy.asarray(train_x).astype(numpy.float32)
 train_y = numpy.asarray(train_y).astype(numpy.float32)
 test_x = numpy.asarray(test_x).astype(numpy.float32)
 test_y = numpy.asarray(test_y).astype(numpy.float32)
-print(numpy.unique(test_y))
-print(train_x.shape, train_y.shape)
-print(test_x.shape, test_y.shape)
 # MLP Model
 model = Sequential()
 model.add(Dense(64, input_dim=39, activation='sigmoid'))
@@ -32,7 +29,6 @@ start_time = time.time()
 history =model.fit(train_x,train_y,validation_data=(test_x,test_y),epochs=100,batch_size=1024)
 end_time = time.time()-start_time
 print("---------------------- %s seconds ---------------------" % end_time)
-print(history.history)
 # Save data and plot
 hist = [history.history['loss'], history.history['val_loss'], history.history['accuracy'],history.history['val_accuracy']]
 # evaluate the model
