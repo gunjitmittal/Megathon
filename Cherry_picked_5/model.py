@@ -1,3 +1,4 @@
+import numpy as np
 from keras.models import Sequential
 from keras.layers.core import Dense, Dropout
 import get_data
@@ -11,7 +12,7 @@ train_y = numpy.asarray(train_y).astype(numpy.float32)
 test_x = numpy.asarray(test_x).astype(numpy.float32)
 test_y = numpy.asarray(test_y).astype(numpy.float32)
 print(numpy.unique(test_y))
-print(train_x.shape, train_y.shape)
+print(train_x.shape, train_y, train_y.shape)
 print(test_x.shape, test_y.shape)
 # MLP Model
 model = Sequential()

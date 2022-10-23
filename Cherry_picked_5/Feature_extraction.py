@@ -4,7 +4,9 @@ import csv
 import os
 from pydub import AudioSegment
 import scipy.signal as sig
+from sklearn.utils import shuffle
 Lang = ['english', 'spanish', 'arabic', 'mandarin', 'french']
+np.savetxt("labels.dat", shuffle(Lang, random_state=1),fmt='%s')
 # for lang in os.listdir(os.fsencode('train')):
 #     langname = os.fsdecode(lang)
 #     if langname == ".DS_Store":
