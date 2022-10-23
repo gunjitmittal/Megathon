@@ -2,6 +2,7 @@ from keras.models import Sequential
 from keras.layers.core import Dense, Dropout
 import get_data
 import csv
+import numpy as np
 import numpy
 # Load Database
 train_x, train_y, train_data_order, train_len = get_data.read_dataset('train')
@@ -41,7 +42,7 @@ scores = model.evaluate(test_x, test_y)
 print("\nTest........%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 # Save accuracy and loss history
 fname = "MLP_"+opt+".csv"
-model.save("./Model_cherry_picked.h5")
+model.save("./Model_cherry_picked_10.h5")
 with open(fname, 'w', newline='') as csv_file:
  wr = csv.writer(csv_file)
  wr.writerows(hist)
